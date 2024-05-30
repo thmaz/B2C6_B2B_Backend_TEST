@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react/recommended', // Use recommended rules for React
     'plugin:@typescript-eslint/recommended', // Use recommended rules from @typescript-eslint/eslint-plugin
   ],
-  parser: '@typescript-eslint/parser', // Specify the parser for TypeScript
+  parser: '@typescript-eslint/parser', // Specify the parser for TypeScriptError: Path does not exist: eslint-results.sarif
   parserOptions: {
     ecmaFeatures: {
       jsx: true, // Enable parsing of JSX
