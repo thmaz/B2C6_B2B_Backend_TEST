@@ -1,31 +1,33 @@
 module.exports = {
-    // Globale regels
-    rules: {
-      // Voorbeelden van regels
-      'no-console': 'error', // Verbiedt het gebruik van console.log
-      'semi': ['error', 'always'], // Vereist puntkomma's aan het einde van regels
-      'indent': ['error', 2], // Indentatie met 2 spaties
+  env: {
+    browser: true, // Enable browser global variables like `window` and `document`
+    es2021: true,  // Enable all ECMAScript 2021 globals and syntax
+    node: true,    // Enable Node.js global variables and Node.js scoping
+  },
+  extends: [
+    'eslint:recommended', // Use recommended ESLint rules
+    'plugin:react/recommended', // Use recommended rules for React
+    'plugin:@typescript-eslint/recommended', // Use recommended rules from @typescript-eslint/eslint-plugin
+  ],
+  parser: '@typescript-eslint/parser', // Specify the parser for TypeScript
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true, // Enable parsing of JSX
     },
-  
-    // Omgeving specifieke regels
-    env: {
-      // Voorbeelden van omgevingen
-      node: true, // Schakelt regels in die relevant zijn voor Node.js
-      es6: true, // Schakelt regels in die relevant zijn voor ES6
+    ecmaVersion: 12, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // Allows for the use of imports
+  },
+  plugins: [
+    'react', // Enables React-specific linting rules
+    '@typescript-eslint', // Enables TypeScript-specific linting rules
+  ],
+  rules: {
+    // Place to specify custom ESLint rules.
+    // e.g. "semi": ["error", "always"],
+  },
+  settings: {
+    react: {
+      version: 'detect', // Automatically detect the version of React to use
     },
-  
-    // Extends
-    extends: [
-      // Voorbeelden van extends
-      'eslint:recommended', // Gebruikt de aanbevolen regels van ESLint
-      'plugin:react/recommended', // Gebruikt de aanbevolen regels voor React
-    ],
-  
-    // Plugins
-    plugins: [
-      // Voorbeelden van plugins
-      'react', // Maakt het mogelijk om regels te gebruiken die specifiek zijn voor React
-      // 'plugin:prettier', // Integreert ESLint met Prettier
-    ],
-  };
-  
+  },
+};
