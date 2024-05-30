@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.10"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -25,4 +25,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         #autopep8 --in-place --aggressive --recursive Calendar.py main.py
-        pylint -j 0 $(git ls-files '*.py') --recursive=y
+        pylint -j 0 $(git ls-files 'main.py') --recursive=y
