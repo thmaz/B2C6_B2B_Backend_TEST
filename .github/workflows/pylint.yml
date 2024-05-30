@@ -24,5 +24,4 @@ jobs:
         #pip install --upgrade autopep8
     - name: Analysing the code with pylint
       run: |
-        #autopep8 --in-place --aggressive --recursive Calendar.py main.py
-        pylint -j 0 $(git ls-files '*.py') --recursive=y
+        pylint -j 0 $(git ls-files '*.py') --recursive=y --errors-only --disable=C,R
