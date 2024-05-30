@@ -7,9 +7,7 @@ module.exports = {
   extends: [
     'eslint:recommended', // Use recommended ESLint rules
     'plugin:react/recommended', // Use recommended rules for React
-    'plugin:@typescript-eslint/recommended', // Use recommended rules from @typescript-eslint/eslint-plugin
   ],
-  parser: '@typescript-eslint/parser', // Specify the parser for TypeScriptError: Path does not exist: eslint-results.sarif
   parserOptions: {
     ecmaFeatures: {
       jsx: true, // Enable parsing of JSX
@@ -19,7 +17,6 @@ module.exports = {
   },
   plugins: [
     'react', // Enables React-specific linting rules
-    '@typescript-eslint', // Enables TypeScript-specific linting rules
   ],
   rules: {
     // Place to specify custom ESLint rules.
