@@ -18,6 +18,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+        pip install flet
+        pip install fastapi
+        pip install mysqlclient
         #pip install --upgrade autopep8
     - name: Analysing the code with pylint
       run: |
