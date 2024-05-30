@@ -1,8 +1,11 @@
+"""
+main function text
+"""
+import os
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 import MySQLdb
-import os
 
 app = FastAPI()
 
@@ -23,14 +26,19 @@ app.mount(
             "static")),
     name="static")
 
-
+"""
+Haal parent directory op
+"""
 @app.get("/", response_class=HTMLResponse)
 async def get_html():
     with open(os.path.join(parent_dir, "index.html"), "r") as f:
         html_content = f.read()
     return HTMLResponse(content=html_content, status_code=200)
 
-
+"""
+Haal data folder op,
+hier wordt backend in gerund
+"""
 @app.get("/data")
 async def get_data():
     db = MySQLdb.connect(**db_config)
